@@ -40,7 +40,11 @@ export async function createUserSessionHandler(req: Request, res: Response) {
 
 	const sessionToken = generateToken(user._id);
 
-	return res.status(200).json({ token: sessionToken, userId: user._id });
+	return res.status(200).json({
+		token: sessionToken,
+		userId: user._id,
+		profilePicture: user.avatar,
+	});
 }
 
 //get

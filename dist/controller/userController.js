@@ -39,7 +39,11 @@ function createUserSessionHandler(req, res) {
             return res.status(401).send('Invalid Email or Password');
         }
         const sessionToken = (0, jwt_1.generateToken)(user._id);
-        return res.status(200).json({ token: sessionToken, userId: user._id });
+        return res.status(200).json({
+            token: sessionToken,
+            userId: user._id,
+            profilePicture: user.avatar,
+        });
     });
 }
 exports.createUserSessionHandler = createUserSessionHandler;

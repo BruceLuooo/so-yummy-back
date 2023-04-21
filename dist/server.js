@@ -48,5 +48,5 @@ app.use('/api/recipes', recipeRoutes_1.default);
 app.use('/api/calenders', calenderRoutes_1.default);
 app.use('/api/search', searchRoutes_1.default);
 app.listen(config_1.config.server.port, () => {
-    console.log(`[Server]: I am running at http://localhost:${port}`);
+    console.log(`[Server]: I am running at ${config_1.config.server.port}`);
 });

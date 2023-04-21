@@ -41,5 +41,5 @@ app.use('/api/calenders', calenderRoutes);
 app.use('/api/search', searchRoutes);
 
 app.listen(config.server.port, () => {
-	console.log(`[Server]: I am running at http://localhost:${port}`);
+	console.log(`[Server]: I am running at ${config.server.port}`);
 });
