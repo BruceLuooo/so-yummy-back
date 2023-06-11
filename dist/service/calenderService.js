@@ -62,7 +62,7 @@ function removeIngredientsFromInventory(userId, recipeIngredients) {
             };
         });
         recipeIngredients.forEach((ingredient) => {
-            const index = ingredientsFromInventory === null || ingredientsFromInventory === void 0 ? void 0 : ingredientsFromInventory.findIndex(value => value.ingredient === ingredient.ingredient);
+            const index = ingredientsFromInventory === null || ingredientsFromInventory === void 0 ? void 0 : ingredientsFromInventory.findIndex(value => value.ingredient.toLowerCase() === ingredient.ingredient.toLowerCase());
             if (index !== undefined) {
                 if (ingredientsFromInventory[index].quantity - ingredient.quantity ===
                     0) {
