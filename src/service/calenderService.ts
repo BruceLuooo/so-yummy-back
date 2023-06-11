@@ -62,7 +62,8 @@ export async function removeIngredientsFromInventory(
 
 	recipeIngredients.forEach((ingredient: Ingredient) => {
 		const index = ingredientsFromInventory?.findIndex(
-			value => value.ingredient === ingredient.ingredient,
+			value =>
+				value.ingredient.toLowerCase() === ingredient.ingredient.toLowerCase(),
 		);
 
 		if (index !== undefined) {
